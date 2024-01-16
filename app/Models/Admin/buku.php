@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\Donation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,4 +42,15 @@ class buku extends Model
             'cover_image_url' => 'required|string',
         ];
     }
+
+    public function donations()
+    {
+        return $this->hasMany(Donation::class, 'price', 'amount'); // Hapus satu pemanggilan 'return'
+    }
+
+    
+
+
+    
+
 }

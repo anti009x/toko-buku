@@ -60,6 +60,7 @@
 </style>
 
 <body style="background-color: bisque">
+
     <div class="container mb-10 shadow-lg p-3 mb-5 bg-white rounded">
         <h4 class="mb-10 d-flex justify-content-center text-muted text-dark" style="color: black col-3 blockquote">
             Tolong Lanjutkan Pembayaran : {{$books->title}}</h4>
@@ -149,15 +150,24 @@
                                 <a href="ecommerce-products.html" class="btn btn-link text-muted">
                                     <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping </a>
                             </div> <!-- end col -->
-                            <div class="col-sm-6">
-                                <div class="text-sm-end mt-2 mt-sm-0">
-                                    {{-- input api midstrans --}}
-                                    <a href="#" class="btn btn-success">
-                                        <i aclass="mdi mdi-cart-outline me-1">
-                                        </i>
+                            <div class="text-sm-end mt-2 mt-sm-0">
+                                {{-- input api midtrans --}}
+                                <form id="donation-form" method="POST" action="{{ route('donation.pay') }}">
+                                    @csrf
+                            
+                                    <input type="hidden" name="buku_id" value="{{ $books->id }}">
+                                    <input type="hidden" name="amount" id="amount" value="{{ $books->price }}">
+                            
+                                    {{-- Add a required field for 'judul' --}}
+                                    <input type="hidden" id="judul" name="judul" value="{{ $books->title }}">
+
+                            
+                                    {{-- Add other form fields as needed --}}
+                                    <button type="submit" class="btn btn-success" id="pay-button">
+                                        <i class="mdi mdi-cart-outline me-1"></i>
                                         Checkout
-                                    </a>
-                                </div>
+                                    </button>
+                                </form>
                             </div> <!-- end col -->
                         </div> <!-- end row-->
                     </div>
@@ -213,10 +223,63 @@
             var price = {{ $books->price }};
             var quantity = document.getElementById('quantitySelect').value;
             var total = price * quantity;
+    
+            // Perbarui nilai amount pada form
+            document.getElementById('amount').value = total;
+            document.getElementById('judul').value = '{{ $books->title }}';
+    
+            // Perbarui tampilan total harga dan subtotal pada halaman
             document.getElementById('totalPrice').innerText = 'Rp.' + total;
             document.getElementById('subPrice').innerText = 'Rp.' + total;
-            
         }
     </script>
+ <script>
+    function calculateTotal() {
+        var price = {{ $books->price }};
+        var quantity = document.getElementById('quantitySelect').value;
+        var total = price * quantity;
+
+        // Perbarui nilai amount pada form
+        document.getElementById('amount').value = total;
+
+        // Perbarui tampilan total harga dan subtotal pada halaman
+        document.getElementById('totalPrice').innerText = 'Rp.' + total;
+        document.getElementById('subPrice').innerText = 'Rp.' + total;
+    }
+</script>
+   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>    
+   <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
+   <script type="text/javascript">
+   $('#pay-button').click(function (event) {
+event.preventDefault();
+
+$.post("{{ route('donation.pay') }}", {
+   _token: '{{ csrf_token() }}',
+   name: $('#name').val(),
+   judul: $('#judul').val(),
+   email: $('#email').val(),
+   amount: $('#amount').val(),
+   note: $('#note').val()
+},
+function (data, status) {
+   snap.pay(data.snap_token, {
+       onSuccess: function (result) {
+           location.reload();
+       },
+
+       onPending: function (result) {
+           location.reload();
+       },
+
+       onError: function (result) {
+           location.reload();
+       }
+   });
+   return false;
+});
+});
+   </script>
+   
 </body>
 @endsection

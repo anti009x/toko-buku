@@ -109,6 +109,7 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th>ID</th>
+                                <th>JUDUL</th>
                                 <th>IMG</th>
                                 <th>Author</th>
                                 <th>Publisher</th>
@@ -126,7 +127,8 @@
                             @foreach ($books as $book)
                             <tr>
                                 <td>{{ $book->id }}</td>
-                                <td col-2><img src="{{ $book->cover_image_url }}" alt="{{ $book->title }}" width="100%"></td>
+                                <td class="col-1">{{$book->title}}</td>
+                                <td class="col-2"><img src="{{ $book->cover_image_url }}" alt="{{ $book->title }}" width="100%"></td>
                                 <td>{{ $book->author }}</td>
                                 <td>{{ $book->publisher }}</td>
                                 <td class="col-2">{{ $book->publication_year }}</td>

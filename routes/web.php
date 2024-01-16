@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\DonationController;
 use App\Http\Controllers\Layout\LayoutController;
 use App\Http\Controllers\Login\ViewLoginController;
 use App\Http\Controllers\Pembayaran\PembayaranController;
@@ -22,9 +23,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
-//midtrans
 
+//midtrans
 Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('id.bayar');
+Route::post('/donation/payment', [DonationController::class, 'pay'])->name('donation.pay');
+
+
+
+
 
 
 //Login
