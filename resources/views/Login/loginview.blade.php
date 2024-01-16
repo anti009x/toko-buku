@@ -13,7 +13,7 @@
           />
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form action="{{ route('login') }}" method="POST">
+          <form action="{{ route('login') }}" method="POST">
             @csrf
             {{-- {/* Email input */} --}}
             <div class="form-outline mb-4">
@@ -22,23 +22,24 @@
                 name="email"
                 id="form1Example13"
                 class="form-control form-control-lg"
+                required
               />
               <label class="form-label" htmlFor="form1Example13">
                 Email address
               </label>
-            </div>
-            {{-- {/* Password input */} --}}
-            <div class="form-outline mb-4">
+          </div>
+          <div class="form-outline mb-4">
               <input
                 type="password"
                 name="password"
                 id="form1Example23"
                 class="form-control form-control-lg"
+                required
               />
               <label class="form-label" htmlFor="form1Example23">
                 Password
               </label>
-            </div>
+          </div>
             <div class="d-flex justify-content-around align-items-center mb-4">
               {{-- {/* Checkbox */} --}}
               <div class="form-check">
