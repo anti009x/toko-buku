@@ -8,16 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CekLevel
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next,...$levels): Response
-    {   
-        if (in_array($request->users()->level,$levels)){
-                return $next ($request);
+    public function handle(Request $request, Closure $next, ...$levels) {
+        if ($request->user() && in_array($request->user()->level, $levels)) {
+            return $next($request);
         }
-        return redirect('/');
-    }
+        return redirect('/')->with('error', 'Anda tidak memiliki akses ke halaman ini.');
+    } 
 }

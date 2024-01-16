@@ -39,7 +39,14 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li class="ml-4">
+                            <form action="{{ route('logout.perform') }}" method="POST">
+                                @csrf
+                                <button type="submit" style=" text-decoration: none; background:none; border:none; padding:0; margin:0;  color:rgb(0, 0, 0); cursor:pointer; ">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>

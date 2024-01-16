@@ -15,24 +15,30 @@ class ViewLoginController extends Controller
         return view ('login.loginview');
     }
 
-    public function postlogin(Request $request){
+    public function postlogin(Request $request) {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
     
-        if (Auth::attempt($request->only('email','password'))){
-            $books = DB::table('buku')->get();
-           return view('user.userview', ['books' => $books]);
-            // dd($request->all());
-            
+        if (Auth::attempt($request->only('email', 'password'))) {
+            // Arahkan ke rute yang sesuai berdasarkan level pengguna
+            return $request->user()->level === 'admin' ? 
+                   redirect()->route('admin.dashboard') : 
+                   redirect()->route('user.view');
+
         }
-        return view('login.loginview');
+    
+        return back()->with('error', 'Invalid Credentials');
     }
-
-    public function logout (){
-        // Session::flush();
-        
+    
+    public function logout(){
         Auth::logout();
-
-        return view ('login.loginview');
+        return redirect()->route('login.view'); // Pengalihan ke halaman login
+      
     }
+
+  
 
     }
 
