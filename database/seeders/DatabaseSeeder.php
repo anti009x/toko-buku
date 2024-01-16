@@ -5,7 +5,10 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use Database\Seeders\Admin\buku;
+use Database\Seeders\Login\users;
 use Illuminate\Database\Seeder;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +26,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             buku::class,
+        ]);
+
+        $this->call([
+            users::class,
         ]);
     }
 }
