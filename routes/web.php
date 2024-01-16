@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 //midtrans
 
-Route::get('/bayar',[PembayaranController::class,'index']);
+Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('id.bayar');
 
 
 //Login

@@ -163,8 +163,11 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now !</button>
+
+
+                                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="redirectToPayment('{{ route('id.bayar', ['id' => $book->id]) }}')">Buy Now !</button>
                            
+
                                     </div>
                                     <small class="text-muted">Updated: {{ $book->updated_at }}</small>
                                 </div>
@@ -199,6 +202,11 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function redirectToPayment(url) {
+          window.location.href = url;
+      }
+      </script>
   </body>
  
 
