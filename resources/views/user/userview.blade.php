@@ -60,6 +60,19 @@
                     >Email me</a
                   >
                 </li>
+                <li>
+                  <a
+                    {{-- href="https://getbootstrap.com/docs/4.4/examples/album/#" --}}
+                    class="text-white"
+                    >
+                    
+                    <form id="logout.perform" action="{{ route('logout.perform') }}" method="POST">
+                    @csrf
+    <button type="submit" class="btn-sm btn-primary ">Logout</button>
+</form>
+</a>
+                </li>
+         
               </ul>
             </div>
           </div>

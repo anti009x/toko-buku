@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [UserController::class, 'index']);
+
 
 
 Route::get('/admindashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -34,7 +34,27 @@ Route::delete('/admin_table/{id}', [TableController::class, 'destroy'])->name('a
 Route::put('/admin_table/{id}', [TableController::class, 'update'])->name('admin.crud.update');
 
 //Login
-Route::get('/login',[ViewLoginController::class,'index'])->name('login.view');
+
+
+Route::get('/',[ViewLoginController::class,'index'])->name('login.view');
+
+
+
+
+
+
+
 Route::post('/post_login', [ViewLoginController::class, 'postlogin'])->name('login');
+Route::post('/logout', [ViewLoginController::class,'logout'])->name('logout.perform');
+
+
+Route::group(['middleware'=>['auth','checklevel:pengguna']],function(){
+    Route::get('/home', [UserController::class, 'index']);
+});
+
+// Route::group(['middleware'=>['auth','checklevel:admin']],function(){
+  
+// });
+
 
 
