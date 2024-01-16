@@ -54,13 +54,36 @@ a {
     background-clip: border-box;
     border: 1px solid #eff0f2;
     border-radius: 1rem;
+
+    html {
+  font-size: 1rem;
 }
+
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+
+
+  h4 {
+    font-size: 1.6rem;
+  }
+}
+
+
 </style>
 
 <body style="background-color: bisque">
 <div class="container  mb-10  shadow-lg p-3 mb-5 bg-white rounded ">
 
-    <h3 class="mb-10 d-flex justify-content-center text-muted text-dark" style="color: black"> TOLONG LANJUTKAN PEMYABARAN DENGAN ITEM BERIKUT</h3>
+    <h4 class="mb-10 d-flex justify-content-center text-muted text-dark" style="color: black col-3 blockquote"> TOLONG LANJUTKAN PEMYABARAN DENGAN ITEM BERIKUT</h4>
 
 <div class="container mt-4 ">
 
