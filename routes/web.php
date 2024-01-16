@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Layout\LayoutController;
+use App\Http\Controllers\Login\ViewLoginController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +32,9 @@ Route::post('/admin_table', [TableController::class, 'store'])->name('admin.crud
 Route::delete('/admin_table/{id}', [TableController::class, 'destroy'])->name('admin.crud.destroy');
 
 Route::put('/admin_table/{id}', [TableController::class, 'update'])->name('admin.crud.update');
+
+//Login
+Route::get('/login',[ViewLoginController::class,'index'])->name('login.view');
+Route::post('/post_login', [ViewLoginController::class, 'postlogin'])->name('login');
+
 
