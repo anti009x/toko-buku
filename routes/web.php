@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Layout\LayoutController;
 use App\Http\Controllers\Login\ViewLoginController;
+use App\Http\Controllers\Pembayaran\PembayaranController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
+//midtrans
 
+Route::get('/bayar',[PembayaranController::class,'index']);
 
 
 //Login
@@ -50,3 +53,5 @@ Route::delete('/admin_table/{id}', [TableController::class, 'destroy'])->name('a
 Route::put('/admin_table/{id}', [TableController::class, 'update'])->name('admin.crud.update');
     // Tambahkan rute admin lainnya di sini jika diperlukan
 });
+
+
