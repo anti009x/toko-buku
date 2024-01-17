@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\chat\AdminChatController;
+use App\Http\Controllers\Chat\ChatController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\Layout\LayoutController;
 use App\Http\Controllers\Login\ViewLoginController;
@@ -20,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//chhatting
+
+Route::get('/chat',[ChatController::class,'index'])->name('user.chat');
+Route::get('/chat_admin',[AdminChatController::class,'index'])->name('admin.chat');
 
 
 
