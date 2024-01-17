@@ -135,7 +135,7 @@
             <a href="{{ route('admin.dashboard') }}" class="btn btn-primary my-2">
                 Admin Dashboard
             </a>
-              <a   class="btn btn-secondary my-2" href="{{ route('user.chat') }}" class="btn btn-primary my-2" >Tanyakan Sekarang !</a
+              <a   class="btn btn-secondary my-2" href="{{ route('message.message') }}" class="btn btn-primary my-2" >Tanyakan Sekarang !</a
             >
           </p>
         </div>

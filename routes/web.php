@@ -3,12 +3,14 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\chat\AdminChatController;
-use App\Http\Controllers\Chat\ChatController;
+use App\Http\Controllers\Chat\ChatControllerTest;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\Layout\LayoutController;
 use App\Http\Controllers\Login\ViewLoginController;
 use App\Http\Controllers\Pembayaran\PembayaranController;
 use App\Http\Controllers\User\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 //chhatting
 
-Route::get('/chat',[ChatController::class,'index'])->name('user.chat');
+Route::get('/chat',[ChatControllerTest::class,'index'])->name('user.chat');
 Route::get('/chat_admin',[AdminChatController::class,'index'])->name('admin.chat');
 
 
@@ -36,7 +38,7 @@ Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('id.baya
 Route::post('/donation/payment', [DonationController::class, 'pay'])->name('donation.pay');
 
 
-
+Route::get('/chatify', [ChatController::class, 'index'])->name('message.message');
 
 
 
@@ -55,7 +57,7 @@ Route::group(['middleware'=>['auth','ceklevel:pengguna']],function(){
 Route::group(['middleware' => ['auth', 'ceklevel:admin']], function() {
     Route::get('/admindashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     
-Route::get('/admin_table', [TableController::class, 'index'])->name('admin.table');
+
 
 Route::get('/admin_table', [TableController::class, 'index'])->name('admin.table');
 

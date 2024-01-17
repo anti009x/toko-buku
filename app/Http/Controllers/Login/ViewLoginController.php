@@ -22,7 +22,7 @@ class ViewLoginController extends Controller
         ]);
     
         if (Auth::attempt($request->only('email', 'password'))) {
-            // Arahkan ke rute yang sesuai berdasarkan level pengguna
+          
             return $request->user()->level === 'admin' ? 
                    redirect()->route('admin.dashboard') : 
                    redirect()->route('user.view');

@@ -147,7 +147,7 @@
                         <!-- end card -->
                         <div class="row my-4">
                             <div class="col-sm-6">
-                                <a href="ecommerce-products.html" class="btn btn-link text-muted">
+                                <a href="{{route('user.view')}}" class="btn btn-link text-muted">
                                     <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping </a>
                             </div> <!-- end col -->
                             <div class="text-sm-end mt-2 mt-sm-0">

@@ -21,7 +21,7 @@
             <div class="modal-body">
                 <!-- Form tambah buku -->
                 <form action="{{ route('admin.crud') }}" method="POST">
-                    @csrf <!-- Tambahkan CSRF token untuk keamanan -->
+                    @csrf 
                     
                     <!-- Judul Buku -->
                     <div class="form-group">
@@ -138,7 +138,7 @@
                                 <td>{{ $book->pages }}</td>
                                 <td>{{ $book->description }}</td>
                                 <td>{{ $book->stock }}</td>
-                                <td class=" col-2 ">
+                                <td class=" col-3 ">
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $book->id }}">Hapus</button>
                                     <button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#editModal{{ $book->id }}">Ubah</button>
                                 
