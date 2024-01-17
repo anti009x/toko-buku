@@ -109,16 +109,17 @@
             <strong>Wibooks</strong>
           </a>
           <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarHeader"
-            aria-controls="navbarHeader"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarHeader"
+          aria-controls="navbarHeader"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          id="ButtonClickYa" 
+      >
+          <span class="navbar-toggler-icon"></span>
+      </button>
         </div>
       </div>
     </header>
@@ -132,9 +133,9 @@
           </p>
           <p>
          
-            <a href="{{ route('admin.dashboard') }}" class="btn btn-primary my-2">
+            {{-- <a href="{{ route('admin.dashboard') }}" class="btn btn-primary my-2">
                 Admin Dashboard
-            </a>
+            </a> --}}
               <a   class="btn btn-secondary my-2" href="{{ route('message.message') }}" class="btn btn-primary my-2" >Tanyakan Sekarang !</a
             >
           </p>
@@ -307,26 +308,10 @@
 
             </div>
     </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <script>
+   <script>
       function redirectToPayment(url) {
           window.location.href = url;
       }
-
 
       </script>
       <script >
@@ -334,6 +319,21 @@
           window.location.href =url;
         }
       </script>
+
+<script>
+
+  var ButtonClickYa = document.getElementById('ButtonClickYa'){
+    ButtonClickYa.addEventListener('clic', function()){
+      var tutup_buka = ButtonClickYa.contains('collapased')
+      if (tutup_buka){
+        ButtonClickYa.classLIst.remove('collpased')
+      }else{
+        ButtonClickYa.classLIst.add('collpased')
+      }
+    }
+  }
+
+</script>
   </body>
  
 
