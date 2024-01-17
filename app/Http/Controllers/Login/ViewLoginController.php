@@ -34,7 +34,7 @@ class ViewLoginController extends Controller
     
     public function logout(){
         Auth::logout();
-        return redirect()->route('login.view'); // Pengalihan ke halaman login
+        return redirect()->route('login.view'); 
       
     }
 
