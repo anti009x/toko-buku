@@ -106,7 +106,7 @@
               ></path>
               <circle cx="12" cy="13" r="4"></circle>
             </svg>
-            <strong>Wibooks</strong>
+            <strong>KStore</strong>
           </a>
           <button
           class="navbar-toggler"
@@ -127,7 +127,7 @@
     <main role="main">
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="mt-2">Wibooks</h1>
+          <h1 class="mt-2">KStore</h1>
           <p class="lead text-muted">
 "Selamat datang di ritel terlengkap kami. Jika ada pertanyaan, jangan ragu untuk bertanya lebih lanjut. Kami di sini untuk membantu Anda menemukan apa yang Anda butuhkan dan memberikan rekomendasi terbaik. Apakah Anda mencari sesuatu yang spesifik, atau hanya ingin menjelajahi koleksi kami? Staf kami selalu siap untuk memberikan bantuan dan informasi terkini tentang produk-produk kami. Terima kasih telah memilih kami, dan semoga Anda memiliki pengalaman belanja yang menyenangkan!"
           </p>
