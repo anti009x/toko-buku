@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class PembayaranController extends Controller
 {
     public function bayar($id) {
-        $books = buku::findOrFail($id); // Pastikan buku dengan ID tersebut ada
-        // Logika untuk menampilkan halaman pembayaran spesifik buku
+        $books = buku::findOrFail($id);
         return view('pembayaran.pembayaran', ['books' => $books]);
     }
 }

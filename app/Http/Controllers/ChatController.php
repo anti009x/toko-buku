@@ -15,10 +15,8 @@ class ChatController extends Controller
             redirect()->route('user.view');
         }
 
-        // Set necessary variables
-        $id = Auth::id();  // Authenticated user's ID
-        // $messengerColor = 'default_color'; // You can set this dynamically as needed
-        // $dark_mode = 'default_mode';       // You can set this dynamically as needed
+        $id = Auth::id();  
+      
 
         // Pass data to the view
         return view('vendor.Chatify.pages.app', [

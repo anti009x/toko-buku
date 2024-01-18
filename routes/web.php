@@ -8,6 +8,7 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\Layout\LayoutController;
 use App\Http\Controllers\Login\ViewLoginController;
+use App\Http\Controllers\Pembayaran\HistoryController;
 use App\Http\Controllers\Pembayaran\PembayaranController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,8 @@ Route::get('/chat_admin',[AdminChatController::class,'index'])->name('admin.chat
 //midtrans
 Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('id.bayar');
 Route::post('/donation/payment', [DonationController::class, 'pay'])->name('donation.pay');
+
+Route::get('/history', [HistoryController::class,'index'])->name('history.history');
 
 
 Route::get('/chatify', [ChatController::class, 'index'])->name('message.message');

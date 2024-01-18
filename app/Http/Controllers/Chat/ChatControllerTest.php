@@ -10,6 +10,8 @@ class ChatControllerTest extends Controller
     
     public function index (){
 
+        
+
         return view ('chat.chat');
     }
 
