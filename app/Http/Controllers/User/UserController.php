@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller{
 public function index() {
-    $books = buku::all(); // Gunakan Eloquent Model
+    $books = buku::all(); 
     return view('user.userview', ['books' => $books]);
 }
 }

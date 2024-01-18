@@ -115,53 +115,40 @@
 </style>
 
 <body style="background-color: bisque">
-    
-    <div class="container mb-10 shadow-lg p-3 mb-5 bg-white rounded">
-        <h4 class="mb-10 d-flex justify-content-center text-muted text-dark" style="color: black col-3 blockquote">
-            </h4>
+    <h4 class=" d-flex justify-content-center text-muted text-dark mt-4" style="color: black col-3 blockquote">
+      INFORMASI TRANSAKSI</h4>
+    <div class="container mb-10 shadow-lg p-3  bg-white rounded mb-2 mt-4">
             <div class="container ">
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>User</th>
-                          <th>Product</th>
-                          <th>Sale</th>
-                          <th>Status</th>
+                          <th>ID</th>
+                          <th>CODE</th>
+                          <th>NAME</th>
+                          <th>AMOUT</th>
+                          <th>JUDUL</th>
+                          <th>STATUS</th>
+                          <th>TANGGAL pembelian</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($history as $historys)
                         <tr>
-                          <td>Hitesh Chauhan</td>
-                          <td>Engine</td>
-                          <td class="text-danger"> 18.76% <i class="fa fa-arrow-down"></i></td>
-                          <td><label class="badge badge-danger">Pending</label></td>
+                          <td>{{$historys->id  }}</td>
+                          <td>{{$historys->code }}</td>
+                          <td>{{$historys->name }}</td>
+                          <td>{{$historys->amount }}</td>
+                          <td>{{$historys->judul }}</td>
+                          <td>{{$historys->status}}</td>
+                          <td>{{$historys->created_at }}</td>
+                    
                         </tr>
-                        <tr>
-                          <td>Samso Palto</td>
-                          <td>Brakes</td>
-                          <td class="text-danger"> 11.06% <i class="fa fa-arrow-down"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
-                        <tr>
-                          <td>Tiplis mang</td>
-                          <td>Window</td>
-                          <td class="text-danger"> 35.00% <i class="fa fa-arrow-down"></i></td>
-                          <td><label class="badge badge-info">Fixed</label></td>
-                        </tr>
-                        <tr>
-                          <td>Pter parker</td>
-                          <td>Head light</td>
-                          <td class="text-success"> 22.00% <i class="fa fa-arrow-up"></i></td>
-                          <td><label class="badge badge-success">Completed</label></td>
-                        </tr>
-                        <tr>
-                          <td>Ankit Dave</td>
-                          <td>Back light</td>
-                          <td class="text-success"> 28.05% <i class="fa fa-arrow-up"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr>
+                     
+                   
                       </tbody>
+                      @endforeach
                     </table>
+                
                 </div>
 </div>
         </body>

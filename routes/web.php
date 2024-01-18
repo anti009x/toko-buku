@@ -38,7 +38,7 @@ Route::get('/chat_admin',[AdminChatController::class,'index'])->name('admin.chat
 Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('id.bayar');
 Route::post('/donation/payment', [DonationController::class, 'pay'])->name('donation.pay');
 
-Route::get('/history', [HistoryController::class,'index']);
+Route::get('/history', [HistoryController::class,'index'])->name('history.history');
 
 
 Route::get('/chatify', [ChatController::class, 'index'])->name('message.message');
