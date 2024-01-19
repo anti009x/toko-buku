@@ -160,11 +160,11 @@
                                     <input type="hidden" name="buku_id" value="{{ $books->id }}">
                                     <input type="hidden" name="amount" id="amount" value="{{ $books->price }}">
                             
-                                    {{-- Add a required field for 'judul' --}}
+                                  
                                     <input type="hidden" id="judul" name="judul" value="{{ $books->title }}">
 
                             
-                                    {{-- Add other form fields as needed --}}
+                                    
                                     <button type="submit" class="btn btn-success" id="pay-button">
                                         <i class="mdi mdi-cart-outline me-1"></i>
                                         Checkout
@@ -261,6 +261,7 @@ $.post("{{ route('donation.pay') }}", {
    name: $('#name').val(),
    judul: $('#judul').val(),
    email: $('#email').val(),
+   alamat: $('#alamat').val(),
    amount: $('#amount').val(),
    note: $('#note').val()
 },

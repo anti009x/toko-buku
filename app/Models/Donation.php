@@ -11,9 +11,11 @@ class Donation extends Model
     use HasFactory;
     protected $table = 'donations';
     protected $fillable = [
+        'id',
         'judul',
         'code',
         'name',
+        'alamat',
         'email',
         'amount',
         'note',
@@ -25,4 +27,11 @@ class Donation extends Model
     {
         return $this->belongsTo(buku::class, 'amount', 'price');
     }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class, 'name', 'name');
+    }
+
+    
 }

@@ -45,7 +45,7 @@ class buku extends Model
 
     public function donations()
     {
-        return $this->hasMany(Donation::class, 'price', 'amount'); // Hapus satu pemanggilan 'return'
+        return $this->hasMany(Donation::class, 'price', 'amount');
     }
 
     
