@@ -89,9 +89,10 @@ class DonationController extends Controller
             'status'     => 'success',
             'message'    => 'Payment successful',
             'snap_token' => $this->response['snap_token'],
+          
         ]);
 
-      
+
     
  
 }
