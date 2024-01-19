@@ -16,8 +16,7 @@ class DonationController extends Controller
     protected $response = [];
 
     public function index($id) {
-        $books = buku::findOrFail($id); // Make sure the book with that ID exists
-        // Logic to display a specific book payment page
+        $books = buku::findOrFail($id);
         return view('pembayaran.pembayaran', ['books' => $books]);
     }
 
@@ -36,18 +35,20 @@ class DonationController extends Controller
 
             $amount = $request->amount;
             $judul = $request->judul;
-            
+            $alamat = $request->alamat;
        
     
             
             $this->validate($request, [
                 'judul' => 'required|string',
+
             ]);
     
             $donation = Donation::create([
                 'code'   => 'DONATION-' . mt_rand(100000, 999999),
                 'name'   => $user->name,
                 'email'  => $user->email,
+                'alamat' => $user->alamat,
                 'amount' => $amount,
                 'judul'  => $judul,
                 'note'   => $request->note,
@@ -67,6 +68,7 @@ class DonationController extends Controller
                         'id'            => $donation->code,
                         'title'         => $donation->judul,
                         'price'         => $donation->amount,
+                        'alamat'        => $donation->alamat,
                         'quantity'      => 1,
                         'name'          => 'Donation to ' . config('app.name'),
                         'brand'         => 'Donation',
@@ -98,7 +100,7 @@ public function callback (Request $request){
                 $serverKey = config('services.midtrans.serverKey');
                 $hashed = hash("sha512", $request->order_id . $request->status . $request->gross_amount . $serverKey);
 
-                if (hash_equals($hashed, $request->signature_key)) {
+                if ($hashed($hashed==$request->signature_key)) {
                     if ($request->transaction_status == 'capture') {
                         $order = Donation::find($request->status);
                         $order->update(['status' => 'Paid']);

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->nullable();
             $table->string('name');
+            $table->string('alamat');
             $table->string('email')->nullable();
             $table->double('amount')->default(0);
             $table->string('judul')->nullable();

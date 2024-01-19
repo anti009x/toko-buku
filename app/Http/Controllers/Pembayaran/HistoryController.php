@@ -9,15 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class HistoryController extends Controller
 {
-       public function index (){
-
-              if (!Auth::check() ) {
-                     $history = Donation::all();
-                     redirect()->route('user.view');
-                     return view ('pembayaran.history',['history' => $history]);
-                 }
-
-
-      
-       }
+    public function index()
+    {
+        if (Auth::check()) {
+            $userName = Auth::user()->name;
+            $history = Donation::where('name', $userName)->get();
+            return view('pembayaran.history', ['history' => $history]);
+        }
+    }
 }

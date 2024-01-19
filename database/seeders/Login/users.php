@@ -19,6 +19,16 @@ class users extends Seeder
                 'name' => 'sule',
                 'level'=>'pengguna',
                 'email' =>'riskisuleman76@gmail.com',
+                'alamat'=>'The Old Schools, Trinity Ln, Cambridge CB2 1TN, Inggris Raya',
+                'password'=>bcrypt(12345),
+                
+            ]);
+
+            DB::table('users')->insert([
+                'name' => 'riski',
+                'level'=>'pengguna',
+                'email' =>'gateng123ke@gmail.com',
+                'alamat'=>'Wellington Square, Oxford OX1 2JD, Inggris Raya',
                 'password'=>bcrypt(12345),
                 
             ]);
@@ -27,6 +37,7 @@ class users extends Seeder
                 'name' => 'admin',
                 'level'=>'admin',
                 'email' =>'riskisuleman2011@gmail.com',
+                'alamat'=>'Exhibition Rd, South Kensington, London SW7 2BX, Inggris Raya',
                 'password'=>bcrypt(12345),
                 
             ]);

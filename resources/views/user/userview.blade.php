@@ -237,7 +237,7 @@
                                         <div class="card w-50 ">
                                             <div class="card-body py-4 mt-2">
                                                 <div class="mb-4">
-                                                    <img src="https://e1.pxfuel.com/desktop-wallpaper/213/398/desktop-wallpaper-icons-elaina-elaina-aesthetic-thumbnail.jpg"
+                                                    <img src="https://images-cdn.ubuy.co.id/634e8cbd790d3a63056bd094-x-kites-face-kite-marvel-avengers-iron.jpg"
                                                         class="rounded-circle shadow-1-strong" width="100" height="100" />
                                                 </div>
                                                 <h5 class="font-weight-bold">{{ $rating->name }}</h5>

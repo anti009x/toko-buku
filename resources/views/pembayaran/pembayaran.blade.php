@@ -261,6 +261,7 @@ $.post("{{ route('donation.pay') }}", {
    name: $('#name').val(),
    judul: $('#judul').val(),
    email: $('#email').val(),
+   alamat: $('#alamat').val(),
    amount: $('#amount').val(),
    note: $('#note').val()
 },

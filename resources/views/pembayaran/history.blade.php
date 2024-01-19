@@ -176,21 +176,23 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>ID</th>
+                   
                           <th>CODE</th>
                           <th>NAME</th>
+                          <th>ALAMAT</th>
                           <th>AMOUT</th>
-                          <th>JUDUL</th>
+                          <th >JUDUL</th>
                           <th>STATUS</th>
-                          <th>TANGGAL pembelian</th>
+                          <th class="col-2">TANGGAL pembelian</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach($history as $historys)
                         <tr>
-                          <td>{{$historys->id  }}</td>
+            
                           <td>{{$historys->code }}</td>
                           <td>{{$historys->name }}</td>
+                          <td class="col-2">{{$historys->alamat }}</td>
                           <td>{{$historys->amount }}</td>
                           <td>{{$historys->judul }}</td>
                           <td>{{$historys->status}}</td>

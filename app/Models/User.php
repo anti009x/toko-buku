@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'level',
+        'alamat',
         'email',
         'password',
     ];
@@ -27,6 +28,10 @@ class User extends Authenticatable
     public function rating()
     {
         return $this->belongsTo(rating::class, 'name', 'name');
+    }
+
+    public function Donnation(){
+        return $this->belongsTo(Donation::class, 'name', 'name');
     }
     /**
      * The attributes that should be hidden for serialization.
