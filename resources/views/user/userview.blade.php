@@ -85,7 +85,9 @@
       <div class="navbar fixed-top navbar-dark bg-dark shadow-sm ">
         
         <a href="{{route('history.history')}}" >
-          <span class="d-flex justify-content-end">
+       
+          <span class="d-flex justify-content-end text-white">
+          <strong> KStore</strong>
           <svg  height="40px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 486.569 486.569" xml:space="preserve">
 <g>
@@ -133,9 +135,9 @@
               <path
                 {{-- d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" --}}
               ></path>
-              <circle cx="12" cy="13" r="4"></circle>
+
             </svg>
-            <strong>KStore</strong>
+            
             
        
           </a>
