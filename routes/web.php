@@ -10,6 +10,7 @@ use App\Http\Controllers\Layout\LayoutController;
 use App\Http\Controllers\Login\ViewLoginController;
 use App\Http\Controllers\Pembayaran\HistoryController;
 use App\Http\Controllers\Pembayaran\PembayaranController;
+use App\Http\Controllers\Rating\RatingController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,11 +33,13 @@ Route::get('/chat',[ChatControllerTest::class,'index'])->name('user.chat');
 Route::get('/chat_admin',[AdminChatController::class,'index'])->name('admin.chat');
 
 
-
+Route::post('/rating',[RatingController::class,'store'])->name('rating.send');
 
 //midtrans
 Route::get('/bayar/{id}', [PembayaranController::class, 'bayar'])->name('id.bayar');
 Route::post('/donation/payment', [DonationController::class, 'pay'])->name('donation.pay');
+
+
 
 Route::get('/history', [HistoryController::class,'index'])->name('history.history');
 

@@ -24,6 +24,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function rating()
+    {
+        return $this->belongsTo(rating::class, 'name', 'name');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

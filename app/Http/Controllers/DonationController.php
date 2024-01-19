@@ -36,8 +36,8 @@ class DonationController extends Controller
 
             $amount = $request->amount;
             $judul = $request->judul;
-    
-     
+            
+       
     
             
             $this->validate($request, [
@@ -88,6 +88,21 @@ class DonationController extends Controller
             'message'    => 'Payment successful',
             'snap_token' => $this->response['snap_token'],
         ]);
-    }
+
+      
     
+ 
+}
+
+public function callback (Request $request){
+                $serverKey = config('services.midtrans.serverKey');
+                $hashed = hash("sha512", $request->order_id . $request->status . $request->gross_amount . $serverKey);
+
+                if (hash_equals($hashed, $request->signature_key)) {
+                    if ($request->transaction_status == 'capture') {
+                        $order = Donation::find($request->status);
+                        $order->update(['status' => 'Paid']);
+                    }
+                }
+            }
 }
