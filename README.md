@@ -12,6 +12,6 @@ adding new user > name (vm2) can access all database
 <br>
 example 2nd server
 <br>
-using dbreaver - > remote server primary mysql login using (vm2)
+using dbreaver - > remote server primary mysql (ip server primary) login using (vm2)
 <br>
 adding database rating -> import table rating.sql
