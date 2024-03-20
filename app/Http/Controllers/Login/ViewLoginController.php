@@ -12,7 +12,7 @@ class ViewLoginController extends Controller
 {
     public function index (){
         
-        return view ('login.loginview');
+        return view ('Login.loginview');
     }
 
     public function postlogin(Request $request) {
