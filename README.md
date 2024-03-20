@@ -2,11 +2,12 @@ PELASE USING PHP 8.0 > VERSION > PELASE 'COMPOSER UPDATE' BEFORE RUNNUNG PROJECT
 
 example primary server 
 adding new user > name (vm2) can access all database
-
+<br>
 1.php artisan migrate --seed 
 2.php artisan server --host  'using your ip' 
 
 
 example 2nd server
+<br>
 using dbreaver - > remote server primary mysql login using (vm2)
 adding database rating -> import table rating.sql
