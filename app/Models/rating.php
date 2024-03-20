@@ -10,6 +10,7 @@ class rating extends Model
     use HasFactory;
 
     protected $table='rating';
+    protected $connection = 'mysql2';
 
     protected $fillable=[
         'name',

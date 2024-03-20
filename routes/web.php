@@ -42,8 +42,6 @@ Route::post('/donation/payment', [DonationController::class, 'pay'])->name('dona
 
 
 Route::get('/history', [HistoryController::class,'index'])->name('history.history');
-
-
 Route::get('/chatify', [ChatController::class, 'index'])->name('message.message');
 
 
@@ -72,7 +70,7 @@ Route::post('/admin_table', [TableController::class, 'store'])->name('admin.crud
 Route::delete('/admin_table/{id}', [TableController::class, 'destroy'])->name('admin.crud.destroy');
 
 Route::put('/admin_table/{id}', [TableController::class, 'update'])->name('admin.crud.update');
-    // Tambahkan rute admin lainnya di sini jika diperlukan
+   
 });
 
 
