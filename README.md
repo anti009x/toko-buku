@@ -15,3 +15,11 @@ example 2nd server
 using dbreaver - > remote server primary mysql (ip server primary) login using (vm2)
 <br>
 adding database rating -> import table rating.sql
+
+<br>
+How To Works ?
+<br>
+Checking model -> Implementation Dual Database <-
+<br>
+		       app/Models/rating.php
+
